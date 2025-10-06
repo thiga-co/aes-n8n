@@ -57,7 +57,7 @@ Fournir au LLM un **contexte produit** clair et stable, distinct de l’initiati
 
 ### 🔎 Où le trouver
 - Clique sur `+` à la fin de ton workflow
-- Selectionne : **Data transformation → Set**.
+- Selectionne : **Data transformation → Edit Field (Set)**.
   
 ### ⚙️ Configuration
 - Onglet **Assignments** → ajoute une variable :
