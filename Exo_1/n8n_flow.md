@@ -67,7 +67,7 @@ Rédigez une description strucuturé **de l'objectif de ton produit, des utilisa
   - **Name** : `ProductDescription`
   - **Type** : `string`
   - **Value** : La desciption du produit rédigée pendant les pré-requis
-- Clique sur **Execute Step**
+- Cliquer sur **Execute Step**
 - Renomme le nœud : \`**Product Description**\`
 
 ### 🧱 Code du nœud
