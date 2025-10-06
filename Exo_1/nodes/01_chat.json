@@ -1,0 +1,30 @@
+{
+    "nodes": [
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          320,
+          3072
+        ],
+        "id": "373832cc-845c-4bf0-bba7-3e6fd6e9725f",
+        "name": "chat",
+        "webhookId": "f42bc8cc-4a76-4fcd-80d9-5f05603f78d1"
+      }
+    ],
+    "connections": {
+      "chat": {
+        "main": [
+          []
+        ]
+      }
+    },
+    "pinData": {},
+    "meta": {
+      "templateCredsSetupCompleted": true,
+      "instanceId": "353e302d3528bc7e1d09652b424f3d36b77ed3a0977d0be1e74f8fc516e33309"
+    }
+  }

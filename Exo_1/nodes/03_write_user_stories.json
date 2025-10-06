@@ -1,0 +1,104 @@
+{
+    "nodes": [
+      {
+        "parameters": {
+          "promptType": "define",
+          "text": "=The initiative to split:\n{{ $('chat').item.json.chatInput }}",
+          "hasOutputParser": true,
+          "messages": {
+            "messageValues": [
+              {
+                "message": "=# Rôle\nTu es un **Product Owner Scrum expérimenté**. Tu parles **français**. Tu aides à clarifier une initiative et à la traduire en **User Stories** utiles pour une équipe Agile.\n\n# Mission\nÀ partir d’une initiative fournie par l’utilisateur, produis **au plus 5** User Stories **conformes INVEST** et adaptées au produit existant. Si l’information est insuffisante, pose des questions ciblées et concises avant de générer les stories.\n\n# Instructions\n- **Gabarit de User Story**\n  - **title** : résumé clair, orienté valeur utilisateur.\n  - **description** : En tant que [rôle], je veux [capacité], afin de [bénéfice].\n  - **Format de sortie (JSON uniquement)\n  - Pas de texte hors JSON. Pas de Markdown. Pas de spécifications techniques. Pas de tâches/sous-tâches.\n\n# Description du produit\n{{ $json.ProductDescription }}\n\n# Ton & style\nClair, concis, **orienté valeur métier**, immédiatement **actionnable** par une équipe. Évite le jargon. Garantis la cohérence et la testabilité de chaque story.\n\n\n\n\n\n"
+              }
+            ]
+          }
+        },
+        "type": "@n8n/n8n-nodes-langchain.chainLlm",
+        "typeVersion": 1.5,
+        "position": [
+          800,
+          2512
+        ],
+        "id": "451c56b8-fcc0-48f1-ba28-3094f1a40450",
+        "name": "Write User Stories",
+        "alwaysOutputData": true,
+        "retryOnFail": true,
+        "onError": "continueRegularOutput"
+      },
+      {
+        "parameters": {
+          "schemaType": "manual",
+          "inputSchema": "{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"title\": \"User Story Document\",\n  \"type\": \"object\",\n  \"properties\": {    \n    \"user_stories\": {\n      \"type\": \"array\",\n      \"description\": \"List of User Stories derived from the Epic.\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"title\": {\n            \"type\": \"string\",\n            \"description\": \"A concise and user-oriented name for the User Story.\"\n          },\n          \"description\": {\n            \"type\": \"string\",\n            \"description\": \"Standard User Story format: 'As a [user role], I want [feature or action], so that [expected benefit]'.\"\n          }\n        },\n        \"required\": [\"title\", \"description\"]\n      }\n    }\n  },\n  \"required\": [\"user_stories\"]\n}"
+        },
+        "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+        "typeVersion": 1.2,
+        "position": [
+          944,
+          2720
+        ],
+        "id": "d5a26d53-74ae-426c-a8b3-1fc9abee3791",
+        "name": "User Stories Structured Output Parser"
+      },
+      {
+        "parameters": {
+          "model": {
+            "__rl": true,
+            "value": "gpt-4o",
+            "mode": "list",
+            "cachedResultName": "gpt-4o"
+          },
+          "options": {
+            "temperature": 0.2
+          }
+        },
+        "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+        "typeVersion": 1.2,
+        "position": [
+          784,
+          2720
+        ],
+        "id": "cf2b83b4-b765-4e90-a80d-93a2eb51f85f",
+        "name": "gpt-4o-for-Automated-Workflow",
+        "credentials": {
+          "openAiApi": {
+            "id": "t9veyCUirYiWelXS",
+            "name": "OpenAi account 4"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Write User Stories": {
+        "main": [
+          []
+        ]
+      },
+      "User Stories Structured Output Parser": {
+        "ai_outputParser": [
+          [
+            {
+              "node": "Write User Stories",
+              "type": "ai_outputParser",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "gpt-4o-for-Automated-Workflow": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "Write User Stories",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "pinData": {},
+    "meta": {
+      "templateCredsSetupCompleted": true,
+      "instanceId": "353e302d3528bc7e1d09652b424f3d36b77ed3a0977d0be1e74f8fc516e33309"
+    }
+  }

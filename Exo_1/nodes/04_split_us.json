@@ -1,0 +1,30 @@
+{
+    "nodes": [
+      {
+        "parameters": {
+          "fieldToSplitOut": "output.user_stories",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.splitOut",
+        "typeVersion": 1,
+        "position": [
+          1152,
+          2512
+        ],
+        "id": "72ba1fcf-a970-475a-9ace-324d05dbd52f",
+        "name": "Split User Stories"
+      }
+    ],
+    "connections": {
+      "Split User Stories": {
+        "main": [
+          []
+        ]
+      }
+    },
+    "pinData": {},
+    "meta": {
+      "templateCredsSetupCompleted": true,
+      "instanceId": "353e302d3528bc7e1d09652b424f3d36b77ed3a0977d0be1e74f8fc516e33309"
+    }
+  }

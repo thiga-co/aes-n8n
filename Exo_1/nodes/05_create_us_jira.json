@@ -1,0 +1,65 @@
+{
+    "nodes": [
+      {
+        "parameters": {
+          "project": {
+            "__rl": true,
+            "value": "10033",
+            "mode": "list",
+            "cachedResultName": "AeS 2025"
+          },
+          "issueType": {
+            "__rl": true,
+            "value": "10005",
+            "mode": "list",
+            "cachedResultName": "Story"
+          },
+          "summary": "={{ $json.title }}",
+          "additionalFields": {
+            "description": "={{ $json.description }}",
+            "customFieldsUi": {
+              "customFieldsValues": [
+                {
+                  "fieldId": {
+                    "__rl": true,
+                    "value": "customfield_10058",
+                    "mode": "list",
+                    "cachedResultName": "player"
+                  },
+                  "fieldValue": "TeamA"
+                }
+              ]
+            },
+            "labels": []
+          }
+        },
+        "type": "n8n-nodes-base.jira",
+        "typeVersion": 1,
+        "position": [
+          1360,
+          2512
+        ],
+        "id": "b74a9f1b-057a-40c3-bd4a-6045e1f180a6",
+        "name": "Create User Story In Jira",
+        "executeOnce": false,
+        "credentials": {
+          "jiraSoftwareCloudApi": {
+            "id": "LRm2emiUirJcPQFI",
+            "name": "Jira SW Cloud Thiga"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Create User Story In Jira": {
+        "main": [
+          []
+        ]
+      }
+    },
+    "pinData": {},
+    "meta": {
+      "templateCredsSetupCompleted": true,
+      "instanceId": "353e302d3528bc7e1d09652b424f3d36b77ed3a0977d0be1e74f8fc516e33309"
+    }
+  }

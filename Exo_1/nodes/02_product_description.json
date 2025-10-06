@@ -1,0 +1,39 @@
+{
+    "nodes": [
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "c4562e6e-5eb7-4826-9604-7a919fd2cbba",
+                "name": "ProductDescription",
+                "value": "Description strucuturé de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales.",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          400,
+          2512
+        ],
+        "id": "d23836e1-e364-4c97-ba8a-91c9aaa4d0a3",
+        "name": "Product Desciption"
+      }
+    ],
+    "connections": {
+      "Product Desciption": {
+        "main": [
+          []
+        ]
+      }
+    },
+    "pinData": {},
+    "meta": {
+      "templateCredsSetupCompleted": true,
+      "instanceId": "353e302d3528bc7e1d09652b424f3d36b77ed3a0977d0be1e74f8fc516e33309"
+    }
+  }
