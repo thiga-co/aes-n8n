@@ -149,12 +149,15 @@ Définir le Large Language Model utilisé par l'agent.
 ### ⚙️ Configuration
 
 1. **Create new Credential** : Se connecter au compte OpenAI pour utiliser l'API de chatGPT.
-2. **API Key** : Utiliser la clef d'API suivante `sk-proj-AlIZ8L54hYn7kzdMjyR1WGh56vVJZFFjFAhfp0p4PMfRMJS46x-eCiDbM2vk-f6ZbDSZt\_xkdHT3BlbkFJUsTEh8hd-UZrxHr42IhOGIv9ayzpjbRdi8dQ\_118h28IpQPB5-PGgOgEHNKcAWMjVuJv-ACn0A
-`
-3. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
-4. **Model** : gpt-4o . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
-5. **Sampling Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
-6. Renomme le nœud : \`**Ecrire les US**\`
+2. **API Key** : Utiliser la clef d'API suivante
+```text
+   sk-proj-AlIZ8L54hYn7kzdMjyR1WGh56vVJZFFjFAhfp0p4PMfRMJS46x-eCiDbM2vk-f6ZbDSZt\_xkdHT3BlbkFJUsTEh8hd-UZrxHr42IhOGIv9ayzpjbRdi8dQ\_118h28IpQPB5-PGgOgEHNKcAWMjVuJv-ACn0A
+```
+
+4. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
+5. **Model** : gpt-4o . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
+6. **Sampling Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
+7. Renomme le nœud : \`**Ecrire les US**\`
 
 ### ✅ Bonnes pratiques
 - Tu peux essayer plus tard de changer le model pour comparer les résultats.
@@ -243,7 +246,10 @@ Créer une **issue Story** dans Jira pour chaque item en sortie du `Split Out`.
 ### ⚙️ Configuration
 - **Credential** : Créer la connexion avec l'espace JIRA
     - Email : `pierre.carpentier@thiga.co`
-    - API Token : `ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3\_Hy1Yq6uX54DX\_DtA\_aT56yHPRRwrrTfKgr7oHk4f3iLq6\_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi\_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC`
+    - API Token :
+```text
+ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3\_Hy1Yq6uX54DX\_DtA\_aT56yHPRRwrrTfKgr7oHk4f3iLq6\_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi\_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC
+```
     - Domain : `https://pcarpentiermail.atlassian.net/` 
 - **Ressource** : Issue
 - **Project** : `AeS 2025`
