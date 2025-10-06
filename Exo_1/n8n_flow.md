@@ -42,7 +42,7 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 ### 🧪 Test rapide
 
 - Dans le cadre de saisie de texte (en bas à gauche), vérifie le statut  **Node Executed Successfully** du trigger.
-- La donnée sera disponible via `$('chat').item.json.chatInput`.
+- Pour information, la donnée sera disponible via `$('chat').item.json.chatInput`.
 
 ### 🧱 Code du nœud
 
