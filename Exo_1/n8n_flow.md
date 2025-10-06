@@ -261,7 +261,7 @@ ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3_Hy1Yq
 - **Issue type** : `Story`
 - **Summary** : `{{ $json.title }}`
 - **Add fields → Description** : `{{ $json.description }}`
-- **Custom fields → player** : Dans _values_, définir un nom unique pour identifier vos US ;)
+- **Custom fields → From list player** : Choisir un nom d'utilisateur permettant d'identifier vos US dans Jira.
 
 ### 🧱 Code du nœud
 ???
