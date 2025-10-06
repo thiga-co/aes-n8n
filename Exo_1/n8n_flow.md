@@ -153,7 +153,7 @@ Définir le Large Language Model utilisé par l'agent.
 `
 3. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
 4. **Model** : gpt-4o . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)(https://platform.openai.com/docs/models/compare)
-5. **Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
+5. **Sampling Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
 6. Renomme le nœud : \`**Ecrire les US**\`
 
 ### ✅ Bonnes pratiques
