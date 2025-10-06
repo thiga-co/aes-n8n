@@ -253,3 +253,12 @@ Créer une **issue Story** dans Jira pour chaque item en sortie du `Split Out`.
 
 ---
 
+
+## 9) Exécution du work flow !
+
+### 🧪 Test Du workflow
+Tu peux envoyer dans le Chat ton initiative pour tester ton workflow n8n et créer tes User Stories !
+
+👏​ Accède à JIRA pour voir tes [Users Stories](https://pcarpentiermail.atlassian.net/issues/?filter=10034)
+
+➿​ Tu peux maintenant ajuster ton prompt pour améliorer tes User Stories ! 
