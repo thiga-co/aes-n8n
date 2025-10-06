@@ -32,8 +32,8 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 
 ### 🔎 Où le trouver / ajouter
 
-- Clique sur `+` à la fin de ton workflow
-- Selectionne : **AI → Triggers → Chat Trigger**.
+- Clique sur `+` au milieu de ton canva workflow
+- Tape **Chat Trigger** dans la barre de recherche.
 
 ### ⚙️ Configuration
 
@@ -41,8 +41,8 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 
 ### 🧪 Test rapide
 
-- Clique **Execute workflow** → ouvre le panneau **Chat**  → envoie ton initiative.
-- La donnée sera disponible via `$('chat').item.json.chatInput`.
+- Dans le cadre de saisie de texte (en bas à gauche), vérifie le statut  **Node Executed Successfully** du trigger.
+- Pour information, la donnée sera disponible via `$('chat').item.json.chatInput`.
 
 ### 🧱 Code du nœud
 
@@ -55,19 +55,20 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 ## 🎯 Rôle
 Fournir au LLM un **contexte produit** clair et stable, distinct de l’initiative.
 
+### Pré-requis 
+Rédigez une description strucuturé **de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales**
+
 ### 🔎 Où le trouver
 - Clique sur `+` à la fin de ton workflow
-- Selectionne : **Data transformation → Set**.
+- Selectionne : **Data transformation → Edit Field (Set)**.
   
 ### ⚙️ Configuration
-- Onglet **Assignments** → ajoute une variable :
+- Onglet **Paramèters** → cliquer sur **Add a field** :
   - **Name** : `ProductDescription`
   - **Type** : `string`
-  - **Value** : La desciption du produit.
+  - **Value** : La desciption du produit rédigée pendant les pré-requis
+- Clique sur **Execute Step**
 - Renomme le nœud : \`**Product Description**\`
-
-### ✅ Bonnes pratiques
-- Rédigez une description strucuturé **de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales**.;
 
 ### 🧱 Code du nœud
 
