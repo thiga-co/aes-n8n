@@ -91,7 +91,8 @@ Paramètrer **l'Agent** permettant de rédiger les User Stories.
 - **Require Specific Output Format** : `activté`. On souhaite que le LLM nous donne les US dans un format strucuturé (json)
 - Cliquer sur **Add  prompt**
      - **Type Name or ID** : `system`
-     - **Message** : _system_prompt_ défini au préalable ci-dessous
+     - **Message** : _system_prompt_ défini ci-dessous au préalable
+- Ne pas cliquer sur **Execute Step**. Tant que les sections 5) et 6) ne sont pas réalisées, le workflow sera toujours en statut **failed**
 
 ### 🖋️ Configurer l'agent Product Ower
 
