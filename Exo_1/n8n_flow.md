@@ -32,8 +32,8 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 
 ### 🔎 Où le trouver / ajouter
 
-- Clique sur `+` à la fin de ton workflow
-- Selectionne : **AI → Triggers → Chat Trigger**.
+- Clique sur `+` au milieu de ton canva workflow
+- Tape **Chat Trigger** dans la barre de recherche.
 
 ### ⚙️ Configuration
 
