@@ -151,7 +151,7 @@ Définir le Large Language Model utilisé par l'agent.
 1. **Create new Credential** : Se connecter au compte OpenAI pour utiliser l'API de chatGPT.
 2. **API Key** : Utiliser la clef d'API suivante
 ```text
-   sk-proj-AlIZ8L54hYn7kzdMjyR1WGh56vVJZFFjFAhfp0p4PMfRMJS46x-eCiDbM2vk-f6ZbDSZt\_xkdHT3BlbkFJUsTEh8hd-UZrxHr42IhOGIv9ayzpjbRdi8dQ\_118h28IpQPB5-PGgOgEHNKcAWMjVuJv-ACn0A
+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
 ```
 
 4. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
@@ -248,7 +248,7 @@ Créer une **issue Story** dans Jira pour chaque item en sortie du `Split Out`.
     - Email : `pierre.carpentier@thiga.co`
     - API Token :
 ```text
-ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3\_Hy1Yq6uX54DX\_DtA\_aT56yHPRRwrrTfKgr7oHk4f3iLq6\_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi\_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC
+ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3_Hy1Yq6uX54DX_DtA_aT56yHPRRwrrTfKgr7oHk4f3iLq6_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC
 ```
     - Domain : `https://pcarpentiermail.atlassian.net/` 
 - **Ressource** : Issue
