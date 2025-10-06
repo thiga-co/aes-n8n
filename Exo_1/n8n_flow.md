@@ -55,6 +55,9 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 ## 🎯 Rôle
 Fournir au LLM un **contexte produit** clair et stable, distinct de l’initiative.
 
+### Pré-requis 
+Rédigez une description strucuturé **de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales**
+
 ### 🔎 Où le trouver
 - Clique sur `+` à la fin de ton workflow
 - Selectionne : **Data transformation → Edit Field (Set)**.
@@ -63,11 +66,9 @@ Fournir au LLM un **contexte produit** clair et stable, distinct de l’initiati
 - Onglet **Paramèters** → cliquer sur **Add a field** :
   - **Name** : `ProductDescription`
   - **Type** : `string`
-  - **Value** : La desciption du produit.
+  - **Value** : La desciption du produit rédigée pendant les pré-requis
+- Clique sur **Execute Step**
 - Renomme le nœud : \`**Product Description**\`
-
-### ✅ Bonnes pratiques
-- Rédigez une description strucuturé **de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales**.;
 
 ### 🧱 Code du nœud
 
