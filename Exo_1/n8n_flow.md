@@ -87,9 +87,11 @@ Paramètrer **l'Agent** permettant de rédiger les User Stories.
 
 ### ⚙️ Configuration
 - Renommez le noeud : `Write User Stories`.
-- Si les noeuds ne sont pas connectés entre eux automatiquement, alors connecter `Chat Trigger Node` (**Source for Prompt = User Message**) ce qui permet d'envoyer l'initiative au LLM
-- **Require Specific Output Format** : `activté` On souhaite que le LLM nous donne les US dans un format strucuturé (json)
-- **Add  prompt** : `system` choisissez vos **OpenAI API** configurés.
+- Si les noeuds ne sont pas connectés entre eux automatiquement, alors dans le champ (**Source for Prompt (User Messageà**) choisissez `Connected Chat Trigger Node`. Cela permet d'envoyer l'initiative au LLM
+- **Require Specific Output Format** : `activté`. On souhaite que le LLM nous donne les US dans un format strucuturé (json)
+- Cliquer sur **Add  prompt**
+     - **Type Name or ID** : `system`
+     - **Message** : _system_prompt_ défini au préalable ci-dessous
 
 ### 🖋️ Configurer l'agent Product Ower
 
