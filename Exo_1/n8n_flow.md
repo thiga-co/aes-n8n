@@ -67,7 +67,7 @@ Rédigez une description strucuturé **de l'objectif de ton produit, des utilisa
   - **Name** : `ProductDescription`
   - **Type** : `string`
   - **Value** : La desciption du produit rédigée pendant les pré-requis
-- Clique sur **Execute Step**
+- Cliquer sur **Execute Step**
 - Renomme le nœud : \`**Product Description**\`
 
 ### 🧱 Code du nœud
@@ -87,9 +87,17 @@ Paramètrer **l'Agent** permettant de rédiger les User Stories.
 
 ### ⚙️ Configuration
 - Renommez le noeud : `Write User Stories`.
-- **Source for Prompt (User Message)** : `Connected Chat Trigger Node` Permet d'envoyer l'initiative au LLM
-- **Require Specific Output Format** : `activté` On souhaite que le LLM nous donne les US dans un format strucuturé (json)
-- **Add  prompt** : `system` choisissez vos **OpenAI API** configurés.
+- Si les noeuds ne sont pas connectés entre eux automatiquement, alors dans le champ (**Source for Prompt (User Message**) choisissez `Define below`. Cela permet d'envoyer l'initiative au LLM
+- **Prompt (User Message)** :
+```markdown
+Initiative à découper :
+{{ $('Chat').item.json.chatInput }}
+```
+- **Require Specific Output Format** : `activté`. On souhaite que le LLM nous donne les US dans un format strucuturé (json)
+- Cliquer sur **Add  prompt**
+     - **Type Name or ID** : `system`
+     - **Message** : _system_prompt_ défini ci-dessous au préalable
+- Ne pas cliquer sur **Execute Step**. Tant que les sections 5) et 6) ne sont pas réalisées, le workflow sera toujours en statut **failed**
 
 ### 🖋️ Configurer l'agent Product Ower
 
@@ -146,12 +154,15 @@ Définir le Large Language Model utilisé par l'agent.
 ### ⚙️ Configuration
 
 1. **Create new Credential** : Se connecter au compte OpenAI pour utiliser l'API de chatGPT.
-2. **API Key** : Utiliser la clef d'API suivante `sk-proj-AlIZ8L54hYn7kzdMjyR1WGh56vVJZFFjFAhfp0p4PMfRMJS46x-eCiDbM2vk-f6ZbDSZt\_xkdHT3BlbkFJUsTEh8hd-UZrxHr42IhOGIv9ayzpjbRdi8dQ\_118h28IpQPB5-PGgOgEHNKcAWMjVuJv-ACn0A
-`
-3. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
-4. **Model** : gpt-4o . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)(https://platform.openai.com/docs/models/compare)
-5. **Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
-6. Renomme le nœud : \`**Ecrire les US**\`
+2. **API Key** : Utiliser la clef d'API suivante
+```text
+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
+```
+
+4. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
+5. **Model** : gpt-4o . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
+6. **Sampling Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
+7. Renomme le nœud : \`**Ecrire les US**\`
 
 ### ✅ Bonnes pratiques
 - Tu peux essayer plus tard de changer le model pour comparer les résultats.
@@ -240,14 +251,17 @@ Créer une **issue Story** dans Jira pour chaque item en sortie du `Split Out`.
 ### ⚙️ Configuration
 - **Credential** : Créer la connexion avec l'espace JIRA
     - Email : `pierre.carpentier@thiga.co`
-    - API Token : `ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3\_Hy1Yq6uX54DX\_DtA\_aT56yHPRRwrrTfKgr7oHk4f3iLq6\_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi\_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC`
+    - API Token :
+```text
+ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3_Hy1Yq6uX54DX_DtA_aT56yHPRRwrrTfKgr7oHk4f3iLq6_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC
+```
     - Domain : `https://pcarpentiermail.atlassian.net/` 
 - **Ressource** : Issue
 - **Project** : `AeS 2025`
 - **Issue type** : `Story`
-- **Summary** : `={{ $json.title }}`
-- **Add fields → Description** : `={{ $json.description }}`
-- **Custom fields → player** : Dans _values_, définir un nom unique pour identifier vos US ;)
+- **Summary** : `{{ $json.title }}`
+- **Add fields → Description** : `{{ $json.description }}`
+- **Custom fields → From list player** : Choisir un nom d'utilisateur permettant d'identifier vos US dans Jira.
 
 ### 🧱 Code du nœud
 ???
