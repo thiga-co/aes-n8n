@@ -68,7 +68,7 @@ Chaque US doit contenir :
 
 ## 3) Ajouter le LLM à l'agent
 
-Dupliquer le  **OpenAI Chat Model** de l'exo 1 et le connecter à l'agent de la même façon.
+Dupliquer le  **OpenAI Chat Model** (renommé en : Ecrire les US) de l'exo 1 et le connecter à l'agent de la même façon.
 
 ---
 
