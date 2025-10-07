@@ -44,10 +44,6 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 - Dans le cadre de saisie de texte (en bas à gauche), vérifie le statut  **Node Executed Successfully** du trigger.
 - Pour information, la donnée sera disponible via `$('chat').item.json.chatInput`.
 
-### 🧱 Code du nœud
-
-[01_chat.json](./nodes/01_chat.json)
-
 ---
 
 ## 3) Node — **Set (Product Description)**
@@ -56,7 +52,7 @@ Point d’entrée : Tu décris l’initiative dans un chat embarqué.
 Fournir au LLM un **contexte produit** clair et stable, distinct de l’initiative.
 
 ### Pré-requis 
-Rédigez une description strucuturé **de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales**
+Rédige une description strucuturé **de l'objectif de ton produit, des utilisateurs et des fonctionnalités principales**
 
 ### 🔎 Où le trouver
 - Clique sur `+` à la fin de ton workflow
@@ -70,10 +66,6 @@ Rédigez une description strucuturé **de l'objectif de ton produit, des utilisa
 - Cliquer sur **Execute Step**
 - Renomme le nœud : \`**Product Description**\`
 
-### 🧱 Code du nœud
-
-???
-
 ---
 
 ## 4) Node — **Basic LLM Chain**
@@ -86,17 +78,17 @@ Paramètrer **l'Agent** permettant de rédiger les User Stories.
 - Selectionne : **AI → Basic LLM Chain**
 
 ### ⚙️ Configuration
-- Renommez le noeud : `Write User Stories`.
-- Si les noeuds ne sont pas connectés entre eux automatiquement, alors dans le champ (**Source for Prompt (User Message**) choisissez `Define below`. Cela permet d'envoyer l'initiative au LLM
+- Renomme le noeud : `Write User Stories`.
+- **Source for Prompt (User Message**) : choisis `Define below`. Cela permet d'envoyer l'initiative au LLM
 - **Prompt (User Message)** :
 ```markdown
 Initiative à découper :
 {{ $('Chat').item.json.chatInput }}
 ```
-- **Require Specific Output Format** : `activté`. On souhaite que le LLM nous donne les US dans un format strucuturé (json)
+- **Require Specific Output Format** : `activé`. On souhaite que le LLM nous donne les US dans un format strucuturé (json)
 - Cliquer sur **Add  prompt**
      - **Type Name or ID** : `system`
-     - **Message** : _system_prompt_ défini ci-dessous au préalable
+     - **Message** : On va le définir dans l'étape d'après ;)
 - Ne pas cliquer sur **Execute Step**. Tant que les sections 5) et 6) ne sont pas réalisées, le workflow sera toujours en statut **failed**
 
 ### 🖋️ Configurer l'agent Product Ower
@@ -109,11 +101,11 @@ Initiative à découper :
 - On y met ce qui doit rester **constant** (rôle, cadre, critères de qualité) ; on met dans les messages suivants ce qui est **variable** (le brief utilisateur).
 
 #### Template de system prompt
-Utilisez un prompt en 5 parties claires :
+Utilise un prompt en 5 parties claires :
 1. **Role** — qui est l'agent ? (ex. *Product Owner expérimenté*)
 2. **Mission** — transformer une initiative en User Stories (avec contraintes INVEST ?)
 3. **Instruction** — gabarit de Story (Title + Description en « As a / I want / So that »). Limite à **5 User Stories max**.
-4. **Product Description** — injectez `{{ $json.ProductDescription }}` pour cadrer le périmètre
+4. **Product Description** — injecte `{{ $json['Product Description'] }}` pour cadrer le périmètre. Tu peux faire un drag & drop depuis les inputs.
 5. **Tone & Style** — concision, valeur business, actionnable
 
 
@@ -133,7 +125,7 @@ Tu es un **Product Owner Scrum expérimenté**. Tu parles **français**. Tu aide
   - Pas de texte hors JSON. Pas de Markdown. Pas de spécifications techniques. Pas de tâches/sous-tâches.
 
 # Description du produit
-{{ $json.ProductDescription }}
+{{ $json['Product Description'] }}
 
 # Ton & style
 Clair, concis, **orienté valeur métier**, immédiatement **actionnable** par une équipe. Évite le jargon. Garantis la cohérence et la testabilité de chaque story.
@@ -160,8 +152,8 @@ sk-proj-AlIZ8L54hYn7kzdMjyR1WGh56vVJZFFjFAhfp0p4PMfRMJS46x-eCiDbM2vk-f6ZbDSZt_xk
 ```
 
 4. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
-5. **Model** : gpt-4o . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
-6. **Sampling Temperature** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
+5. **Model** : `gpt-4o` . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
+6. **Sampling Temperature (add option)** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
 7. Renomme le nœud : \`**Ecrire les US**\`
 
 ### ✅ Bonnes pratiques
@@ -180,7 +172,7 @@ Imposer un **schéma** que le LLM doit respecter (liste de User Stories avec `ti
 
 ### ⚙️ Configuration
 - **Schema type** : `Define using JSON Schema`
-- **Input schema** : collez le JSON Schema fourni (ci-dessous).
+- **Input schema** : colle le JSON Schema fourni (ci-dessous).
 
 ```json
 {
@@ -213,12 +205,7 @@ Imposer un **schéma** que le LLM doit respecter (liste de User Stories avec `ti
 
 ### ✅ Bonnes pratiques
 - Tu peux aussi générer automatiquement le schema à partir d'un exemple en json.
-
----
-
-### 🧱 Code du nœud complet
-
-???
+- Tu peux déjà envoyer un message dans le chat pour exécuter ton workflow et voir si tout fonctionne bien ! Cela permet aussi d'avoir les valeurs en sortie des noeuds.
 
 ---
 
@@ -232,10 +219,7 @@ Parcourir **chaque élément** du tableau `output.user_stories` produit par la L
 - Selectionne : **Split Out**
 
 ### ⚙️ Configuration
-- **Field to split out** : `output.user_stories` : Chaque exécution suivante recevra un item USer Story `{ title, description }`.
-
-### 🧱 Code du nœud
-???
+- **Field to split out** : `output.user_stories` (Tu peux également faire un drag&drop dpuis les inputs): Chaque exécution suivante recevra un item USer Story `{ title, description }`.
 
 ---
 
@@ -255,19 +239,15 @@ Créer une **issue Story** dans Jira pour chaque item en sortie du `Split Out`.
 ```text
 ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3_Hy1Yq6uX54DX_DtA_aT56yHPRRwrrTfKgr7oHk4f3iLq6_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC
 ```
-    - Domain : `https://pcarpentiermail.atlassian.net/` 
-- **Ressource** : Issue
-- **Project** : `AeS 2025`
-- **Issue type** : `Story`
-- **Summary** : `{{ $json.title }}`
-- **Add fields → Description** : `{{ $json.description }}`
-- **Custom fields → From list player** : Choisir un nom d'utilisateur permettant d'identifier vos US dans Jira.
-
-### 🧱 Code du nœud
-???
+   - Domain : `https://pcarpentiermail.atlassian.net/` 
+   - **Ressource** : Issue
+   - **Project** : `AeS 2025`
+   - **Issue type** : `Story`
+   - **Summary** : `{{ $json.title }}`
+   - **Add fields → Description** : `{{ $json.description }}`
+   - **Custom fields → From list player** : Choisir un nom d'utilisateur permettant d'identifier vos US dans Jira.
 
 ---
-
 
 ## 9) Exécution du work flow !
 
