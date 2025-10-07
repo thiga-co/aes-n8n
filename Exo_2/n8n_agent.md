@@ -105,7 +105,7 @@ L'agent est capable d'appeler en autonomie les outils (Tools) qui lui sont confi
 - **Issue type** : `Story`. Le type de ticket Jira que l'on veut créer.
 - **Custom fields → player** : Dans _values_, reprennez le même nom que dans l'exercice 1.
 
-Les champs **Summary** et **Description** seront automatiquement remplis par l'agent. 
+Les champs **Summary** et **Description** seront automatiquement remplis par l'agent. Pour cela, cliquer sur le tool étoile à droite du champ **Summary**. Faire de même pour le champ **Description** après l'avoir ajouté le champ.
 
 ## 6) Exécution du workflow !
 
