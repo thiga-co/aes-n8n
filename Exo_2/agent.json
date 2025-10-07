@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        320,
+        3072
+      ],
+      "id": "373832cc-845c-4bf0-bba7-3e6fd6e9725f",
+      "name": "chat",
+      "webhookId": "f42bc8cc-4a76-4fcd-80d9-5f05603f78d1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        608,
+        3312
+      ],
+      "id": "7cb007db-1766-4090-8345-654a6f80dcf3",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "t9veyCUirYiWelXS",
+          "name": "OpenAi account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=#System Prompt – Agent Product Owner Confirmé\n\nTu es un Product Owner confirmé qui accompagne l’utilisateur pour clarifier et creuser son besoin afin de le traduire en User Stories JIRA.\nTu dois adopter une posture de facilitateur,et expert en Product Management et focus sur la valeur.\n\nVoici une description de ton Produit :\nC'est une application web avec une interface qui permet à des gestionnaires de site de lancer une conversation avec un avatar en speech to speech. L'initiative permet aux utilisateurs de répondre à leurs questions fréquentes.\n\n#Rôle et comportement\nTu aides l’utilisateur à préciser son besoin sans jargon inutile.\nTu poses uniquement une question par message.\nConcentre-toi sur la nouvelle initiative à rajouter dans le produit existant.\n\n#Règles d’interaction\n\nMaximum 5 tours de conversation (questions-réponses).\nÀ chaque étape, tu cherches à obtenir une information utile pour rédiger des User Stories (Summary + Description).\nSi, avant la fin des 5 échanges, tu as assez d’informations pour créer des US clairs et cohérents, tu passes directement à la génération des User Stories.\nTu ne demandes pas la permission explicite de créer les US : tu le fais automatiquement quand c’est prêt.\n\n#Sortie attendue :\n\nÀ la fin de la conversation (ou avant si toutes les infos sont claires), tu appelles automatiquement le tool JIRA pour créer entre 1 et 5 User Stories maximum.\n\nChaque US doit contenir :\n - Summary clair et concis.\n - Description rédigée au format En tant que [utilisateur], je veux [fonctionnalité] afin de [valeur ajoutée].\n\n",
+          "maxIterations": 50,
+          "enableStreaming": true
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        736,
+        3072
+      ],
+      "id": "70ad313d-0913-45b7-9da9-68157c116147",
+      "name": "PO Agent"
+    },
+    {
+      "parameters": {
+        "project": {
+          "__rl": true,
+          "value": "10033",
+          "mode": "list",
+          "cachedResultName": "AeS 2025"
+        },
+        "issueType": {
+          "__rl": true,
+          "value": "10005",
+          "mode": "list",
+          "cachedResultName": "Story"
+        },
+        "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}",
+        "additionalFields": {
+          "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Description', ``, 'string') }}",
+          "customFieldsUi": {
+            "customFieldsValues": [
+              {
+                "fieldId": {
+                  "__rl": true,
+                  "value": "customfield_10058",
+                  "mode": "list",
+                  "cachedResultName": "player"
+                },
+                "fieldValue": "TeamA"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.jiraTool",
+      "typeVersion": 1,
+      "position": [
+        976,
+        3344
+      ],
+      "id": "fca9d55e-7096-4d29-8e1f-9c709ef6a835",
+      "name": "Create a User Story",
+      "credentials": {
+        "jiraSoftwareCloudApi": {
+          "id": "LRm2emiUirJcPQFI",
+          "name": "Jira SW Cloud Thiga"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        816,
+        3328
+      ],
+      "id": "710862ee-ba2d-44b3-a59f-1d44cb8e1c86",
+      "name": "Simple Memory"
+    }
+  ],
+  "connections": {
+    "chat": {
+      "main": [
+        [
+          {
+            "node": "PO Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "PO Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a User Story": {
+      "ai_tool": [
+        [
+          {
+            "node": "PO Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "PO Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "353e302d3528bc7e1d09652b424f3d36b77ed3a0977d0be1e74f8fc516e33309"
+  }
+}
