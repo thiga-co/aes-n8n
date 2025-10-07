@@ -112,4 +112,6 @@ Les champs **Summary** et **Description** seront automatiquement remplis par l'a
 Tu peux mantenant échanger avec ton agent conversationnelle dans le Chat pour affiner ton Initiative !
 Ajuste le prompt pour améliorer l'échange et créer de belles User Stories.
 
+👏​ Accède à JIRA pour voir tes [Users Stories](https://pcarpentiermail.atlassian.net/issues/?filter=10034)
+
 ​🔄​ Pour relancer une nouvelle conversation, clique sur `Reset chat session`afin d'effacer l'hitorique des échanges.
