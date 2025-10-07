@@ -68,7 +68,7 @@ Chaque US doit contenir :
 
 ## 3) Ajouter le LLM à l'agent
 
-Dupliquer le  **OpenAI Chat Model** (renommé en : Ecrire les US) de l'exo 1 et le connecter à l'agent de la même façon.
+Dupliquer le  **OpenAI Chat Model** (renommer en : Ecrire les US) de l'exo 1 et le connecter à l'agent de la même façon.
 
 ---
 
@@ -103,9 +103,9 @@ L'agent est capable d'appeler en autonomie les outils (Tools) qui lui sont confi
 - **Operation** : `Create`. On veut créer des User Stories.
 - **Project** : `AeS 2025`. Notre projet Jira pour l'atelier.
 - **Issue type** : `Story`. Le type de ticket Jira que l'on veut créer.
-- **Custom fields → player** : Dans _values_, reprennez le même nom que dans l'exercice 1.
+- **Custom fields → player** : Dans _values_, reprend le même nom que dans l'exercice 1.
 
-Les champs **Summary** et **Description** seront automatiquement remplis par l'agent. Pour cela, cliquer sur le tool étoile à droite du champ **Summary**. Faire de même pour le champ **Description** après l'avoir ajouté le champ.
+Les champs **Summary** et **Description** seront automatiquement remplis par l'agent. Pour cela, clique sur le tool étoile à droite du champ **Summary**. Faire de même pour le champ **Description** après l'avoir ajouté le champ.
 
 ## 6) Exécution du workflow !
 
