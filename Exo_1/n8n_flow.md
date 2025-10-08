@@ -237,7 +237,7 @@ Créer une **issue Story** dans Jira pour chaque item en sortie du `Split Out`.
     - Email : `pierre.carpentier@thiga.co`
     - API Token :
 ```text
-ATATT3xFfGF0zK5Hlhc4pX35b6HJNGg7PsZ1VDCC37GCP9T1wMScddwgyWSp-QHPYMQWMiF0L3_Hy1Yq6uX54DX_DtA_aT56yHPRRwrrTfKgr7oHk4f3iLq6_rLXbwD6O42sxTVMxetQJsFPqtuurpm-OrQqCi_ZPdsksq3dCMNxsyTj17LTt9U=823EF8CC
+ATATT3xFfGF09j1oD31v-FMy0hVtsdDYGAa1OdvJSW0jvaAa7FqccsZXfzoQrHvncbCkADJfJNhBAoZtQwSoEsdiAhntY3niEksLzDdTNB0t3hUFZRJHKnM_QocxgYhC1vf6kaXar4Lnhp8CgTeuywsY05RySs3favetVmDQvmuLEz1pY6HCw10=
 ```
    - Domain : `https://pcarpentiermail.atlassian.net/` 
    - **Ressource** : Issue
