@@ -148,7 +148,7 @@ Définir le Large Language Model utilisé par l'agent.
 1. **Create new Credential** : Se connecter au compte OpenAI pour utiliser l'API de chatGPT.
 2. **API Key** : Utiliser la clef d'API suivante
 ```text
-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
+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
 ```
 
 4. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
