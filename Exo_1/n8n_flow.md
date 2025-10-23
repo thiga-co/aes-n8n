@@ -146,15 +146,11 @@ Définir le Large Language Model utilisé par l'agent.
 ### ⚙️ Configuration
 
 1. **Create new Credential** : Se connecter au compte OpenAI pour utiliser l'API de chatGPT.
-2. **API Key** : Utiliser la clef d'API suivante
-```text
-sk-proj-l-Tq4j3nGBW4N0qNMAdf6rqkGR7n_wXGx9WvObkGiCi3MafcbWn2Czy7gm9a0Nsc9eeopNNaGeT3BlbkFJf-dRp3YeYGGLT4ystuLJnUv2ILD6pJ5c3QUr1-f416TqYQ4OhijuoN4zYE-HyNF1htw7F
-```
-
-4. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
-5. **Model** : `gpt-4o` . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
-6. **Sampling Temperature (add option)** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
-7. Renomme le nœud : \`**Ecrire les US**\`
+2. **API Key** : crée une clé API sur ton compte [OpenAI API](https://platform.openai.com/settings/organization/api-keys)
+3. **Save & Test** : Sauvegarder, la connexion avec Open AI est validée.
+4. **Model** : `gpt-4o` . Offre un bon compris de vitesse et de qualité. Pour choisir votre modèle openAI [modèle openAI](https://platform.openai.com/docs/models/compare)
+5. **Sampling Temperature (add option)** : `0.2` C'est le niveau de predictibilité / créativité du modèle compris entre 0 et 2.
+6. Renomme le nœud : \`**Ecrire les US**\`
 
 ### ✅ Bonnes pratiques
 - Tu peux essayer plus tard de changer le model pour comparer les résultats.
